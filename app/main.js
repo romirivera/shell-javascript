@@ -5,10 +5,18 @@ const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
+  prompt: '$ ',
 });
-rl.question('$ ', (answer) => {
-  console.log(`${answer}: command not found`);
-  rl.close();
+rl.prompt(); // Muestra el prompt inicial
+
+rl.on('line', (input) => {
+  console.log(`${input}: command not found`);
+  rl.prompt(); // Muestra el prompt nuevamente después de cada entrada
+});
+
+rl.on('close', () => {
+  console.log('Exiting shell.');
+  process.exit(0);
 });
 
 //Crea una interfaz de lectura/escritura en la terminal usando process.stdin para la entrada y process.stdout para la salida.
