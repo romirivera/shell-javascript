@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 rl.question('$ ', (answer) => {
-  console.log(`Ingresaste: ${answer}`);
+  console.log(`${answer}: command not found`);
   rl.close();
 });
 
