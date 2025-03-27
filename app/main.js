@@ -10,6 +10,10 @@ const rl = readline.createInterface({
 rl.prompt(); // Muestra el prompt inicial
 
 rl.on('line', (input) => {
+  if (input.trim() === 'exit 0') {
+    rl.close(); //cierre de la interfaz antes de salir
+    return;
+  }
   console.log(`${input}: command not found`);
   rl.prompt(); // Muestra el prompt nuevamente después de cada entrada
 });
