@@ -1,0 +1,5 @@
+
+
+set -eu
+
+VERSION=${CODECRAFTERS_CLI_VERSION:-v34}
