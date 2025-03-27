@@ -19,7 +19,6 @@ rl.on('line', (input) => {
 });
 
 rl.on('close', () => {
-  console.log('Exiting shell.');
   process.exit(0);
 });
 
